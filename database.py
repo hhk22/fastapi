@@ -7,8 +7,6 @@ SQLALCHEMY_DATABASE_URL = "sqlite:///./myapi.db"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
-
-session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
 Base = declarative_base()
 
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
