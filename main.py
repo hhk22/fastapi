@@ -1,7 +1,8 @@
 
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
-from questions import question_router
+from domain.questions import question_router
+from domain.answers import answer_router
 
 app = FastAPI()
 
@@ -20,3 +21,4 @@ app.add_middleware(
 
 
 app.include_router(question_router.router)
+app.include_router(answer_router.router)
